@@ -6,7 +6,7 @@ I built this website for [The Odin Project’s personal website assignment](http
 
 ![The portfolio’s introduction and selected work on a desktop screen](docs/portfolio-desktop.webp)
 
-[Visit the live portfolio](https://personal-portfolio-jan-christopher-buen.vercel.app/)
+[Visit the live portfolio](https://janchristopherbuen.vercel.app/)
 
 ## What you can explore
 
@@ -74,7 +74,7 @@ Design research included [Brittany Chiang](https://brittanychiang.com/) for clea
 
 ## Hosting
 
-Hosted on Vercel’s free Hobby plan at [personal-portfolio-jan-christopher-buen.vercel.app](https://personal-portfolio-jan-christopher-buen.vercel.app/).
+Hosted on Vercel’s free Hobby plan at [janchristopherbuen.vercel.app](https://janchristopherbuen.vercel.app/).
 
 The project uses the repository root, the Vite preset, Node.js **24.x**, install command **`npm ci`**, build command **`npm run build`**, and output directory **`dist`**. No environment variables or SPA routing rewrites are required. The production branch is `main`.
 
