@@ -6,6 +6,8 @@ I built this website for [The Odin Project’s personal website assignment](http
 
 ![The portfolio’s introduction and selected work on a desktop screen](docs/portfolio-desktop.webp)
 
+[Visit the live portfolio](https://personal-portfolio-jan-christopher-buen.vercel.app/)
+
 ## What you can explore
 
 - An introduction, four selected projects, a short about section, demonstrated skills, and my GitHub profile.
@@ -58,7 +60,7 @@ index.html                  Page title, description, and social metadata
 
 Edit `src/data/projects.js` to update a project. Replace its screenshot in `public/images/` and keep its alternative text and dimensions accurate. Update the introduction, about text, and contact profile in `src/App.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
 
-The contact section includes my approved email address and verified GitHub profile. No résumé is published. The site does not yet have a production URL, so canonical and social-image URLs are intentionally omitted.
+The contact section includes my approved email address and verified GitHub profile. No résumé is published. The page uses the confirmed production URL for canonical and Open Graph URL metadata. No social image is configured.
 
 ## Assets and references
 
@@ -70,11 +72,13 @@ The assignment’s [Forbes article](https://www.forbes.com/sites/jacquelynsmith/
 
 Design research included [Brittany Chiang](https://brittanychiang.com/) for clear project evidence, [Josh W. Comeau](https://www.joshwcomeau.com/) for readable content hierarchy, and [Adham Dannaway](https://www.adhamdannaway.com/) for direct work/about/contact navigation. This portfolio uses its own layout, copy, and visual identity.
 
-## Deployment handoff
+## Hosting
 
-For a future Vercel deployment, import this repository and select **Vite**. Use the repository root, Node.js **24.x**, install command **`npm ci`**, build command **`npm run build`**, and output directory **`dist`**. No environment variables or SPA routing rewrites are needed for this single page.
+Hosted on Vercel’s free Hobby plan at [personal-portfolio-jan-christopher-buen.vercel.app](https://personal-portfolio-jan-christopher-buen.vercel.app/).
 
-After deployment, verify the production site, add its confirmed URL here, and set the canonical and Open Graph URL in `index.html`. Add a social image only when its actual hosted URL is known.
+The project uses the repository root, the Vite preset, Node.js **24.x**, install command **`npm ci`**, build command **`npm run build`**, and output directory **`dist`**. No environment variables or SPA routing rewrites are required. The production branch is `main`.
+
+The canonical and Open Graph URLs in `index.html` point to the live portfolio. If the production domain changes, update both metadata URLs and the links in this README. Add a social image only when an actual hosted image is available.
 
 ## Feedback
 
