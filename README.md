@@ -10,12 +10,13 @@ I built this website for [The Odin Project’s personal website assignment](http
 
 ## What you can explore
 
-- A portrait introduction with direct work and contact links.
+- An introduction with equal-width content and portrait columns on desktop, stacked on mobile, plus direct work and contact links.
 - **Commercial client work:** featured cards for Rossi Moves the East, Practical Exterior Maintenance, and Nexora Technologies. A “Show more client work” control reveals matching cards for Ironclad Sites and Paver Sealing Academy. Practical Exterior Maintenance is clearly identified as a redesign of an existing website.
 - **Services:** WordPress websites, redesign and maintenance, technical SEO setup, and custom web applications supported by personal-project examples.
 - **Personal full-stack projects:** Commonroom, Midnight Market, and Signal Post, with screenshots, features, engineering decisions, and live/source links.
 - Capsule badges with locally bundled technology logos and readable labels, grouped into frontend, backend/data, WordPress, testing, and tools/deployment. The selection reflects my client work and public JavaScript projects.
-- Current experience, seven certifications, and separate self-directed learning through The Odin Project and Learn WordPress.
+- About content and an Experience timeline share equal-width desktop columns, stacked on mobile. About stays visible while scrolling the timeline in the desktop layout. The timeline covers my current web role and previous manufacturing and QA roles; the introduction appears once under About, and the About navigation link covers the combined content.
+- Seven certifications and separate self-directed learning through The Odin Project and Learn WordPress, followed by Contact.
 - Neutral dark surfaces with warm orange actions, responsive navigation, visible keyboard focus, a skip link, and motion that respects reduced-motion preferences.
 
 The full-stack applications are personal learning projects, separate from the commercial WordPress work. Their free-hosted APIs may take about a minute to wake; provider limits can affect availability. Follow each source link for setup instructions and limitations.
@@ -54,13 +55,14 @@ src/components/                Navigation, client work, services, projects, skil
 src/data/clientWork.js         Commercial contributions and live links
 src/data/projects.js           Personal projects and source links
 src/data/credentials.js        Credential titles, issuers, available dates and links
+src/data/experience.js         Roles, employers, dates, and responsibility summaries
 src/styles.css                 Theme tokens, layout, responsive rules, and motion
 public/images/                 Portrait and real personal-project screenshots
 docs/                          Screenshot of the completed portfolio
 index.html                     Page title, description, and social metadata
 ```
 
-Edit the modules in `src/data/` to update client work, personal projects, or credentials. Only add credential dates and verification URLs supported by the certificate or issuer. When replacing a personal-project screenshot in `public/images/`, keep its alternative text and dimensions accurate. Update the introduction, about text, and contact profile in `src/App.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
+Edit the modules in `src/data/` to update client work, personal projects, credentials, or experience. Only add credential dates and verification URLs supported by the certificate or issuer. When replacing a personal-project screenshot in `public/images/`, keep its alternative text and dimensions accurate. Update the introduction, about text, and contact profile in `src/App.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
 
 The contact section includes my approved email address and verified GitHub profile. No résumé is published. The page uses the confirmed production URL for canonical and Open Graph URL metadata. No social image is configured.
 

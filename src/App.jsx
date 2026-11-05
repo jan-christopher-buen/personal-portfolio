@@ -5,55 +5,32 @@ import ClientWork from './components/ClientWork.jsx'
 import Services from './components/Services.jsx'
 import Stack from './components/Stack.jsx'
 import Credentials from './components/Credentials.jsx'
+import Experience from './components/Experience.jsx'
 import { profileUrl, projects } from './data/projects.js'
 
 function About() {
   return (
     <section
       id="about"
-      className="about section"
+      className="about"
       tabIndex="-1"
       aria-labelledby="about-title"
     >
-      <div>
-        <p className="eyebrow section-label">05 / About & experience</p>
+      <div className="about-content">
+        <p className="eyebrow section-label">05 / About</p>
         <h2 id="about-title">
           Careful with the details.
           <br />
           Curious about the whole.
         </h2>
-        <p className="about-intro">
-          I’m Jan Christopher Buen, a web developer working across WordPress
-          websites, full-stack JavaScript projects, and technical SEO.
-        </p>
-      </div>
-      <div className="about-copy">
-        <div className="experience">
-          <p className="eyebrow">Current experience</p>
-          <h3>Web Developer &amp; SEO Specialist</h3>
-          <p>Ironclad Sites &amp; affiliated businesses</p>
-          <p className="experience-details">
-            Part-time · Remote
-            <br />
-            <time dateTime="2026-03">March 2026</time>–Present
-          </p>
-        </div>
-        <p>
-          My client work includes building and customizing WordPress websites,
-          maintaining them, and managing hosting. I work with PHP, custom child
-          themes, ACF, WooCommerce, and custom plugins to make content
-          manageable and support business needs.
-        </p>
-        <p>
-          Alongside that work, I build personal applications with React,
-          Express, and PostgreSQL. My engineering and QA background informs a
-          careful approach to troubleshooting, checking behavior, and
-          documenting decisions.
-        </p>
-        <p>
-          I value useful interfaces, recoverable errors, and clear data
-          boundaries. Each project is an opportunity to understand how those
-          pieces work together.
+        <p className="about-description">
+          I’m Jan Christopher Buen, a web developer building WordPress websites
+          and full-stack JavaScript applications with React, Express, and
+          PostgreSQL. My current work includes technical SEO and site
+          maintenance. My previous roles in manufacturing, product engineering,
+          and quality assurance shape how I troubleshoot, verify behavior, and
+          document decisions, with a focus on useful interfaces and dependable
+          websites.
         </p>
       </div>
     </section>
@@ -91,52 +68,42 @@ export default function App() {
       <Header />
       <main id="main" tabIndex="-1">
         <section className="hero" aria-labelledby="intro-title">
-          <div className="hero-layout">
-            <div className="hero-copy">
-              <p className="eyebrow">
-                <span className="identity-line" aria-hidden="true" />
-                Jan Christopher Buen / Web Developer
-              </p>
-              <h1 id="intro-title">
-                Useful websites.
-                <br />
-                <span>Thoughtful</span>
-                <br />
-                implementation.
-              </h1>
-              <p className="hero-description">
-                I build full-stack JavaScript applications and WordPress
-                websites, bringing technical SEO and careful site maintenance
-                into the same workflow.
-              </p>
-              <div className="hero-actions">
-                <a className="button" href="#work">
-                  View My Work <span aria-hidden="true">↗</span>
-                </a>
-                <a className="secondary-action" href="#contact">
-                  Let’s Talk <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-              <p className="hero-caption">
-                Client websites. Personal applications. Continuous learning.
-              </p>
+          <div className="hero-copy">
+            <p className="eyebrow">
+              <span className="identity-line" aria-hidden="true" />
+              Jan Christopher Buen / Web Developer
+            </p>
+            <h1 id="intro-title">
+              Useful websites.
+              <br />
+              <span>Thoughtful implementation.</span>
+            </h1>
+            <p className="hero-description">
+              I build full-stack JavaScript applications and WordPress websites,
+              bringing technical SEO and careful site maintenance into the same
+              workflow.
+            </p>
+            <div className="hero-actions">
+              <a className="button" href="#work">
+                View My Work <span aria-hidden="true">↗</span>
+              </a>
+              <a className="secondary-action" href="#contact">
+                Let’s Talk <span aria-hidden="true">↗</span>
+              </a>
             </div>
-            <figure className="hero-portrait">
-              <div className="portrait-frame">
-                <img
-                  src="/images/jan-christopher-buen.jpg"
-                  alt="Jan Christopher Buen"
-                  width="720"
-                  height="1008"
-                  fetchPriority="high"
-                  decoding="async"
-                />
-              </div>
-              <figcaption>
-                <span>Jan Christopher Buen</span>
-                <span>Web Developer</span>
-              </figcaption>
-            </figure>
+            <p className="hero-caption">
+              Client websites. Personal applications. Continuous learning.
+            </p>
+          </div>
+          <div className="hero-portrait">
+            <img
+              src="/images/jan-christopher-buen.jpg"
+              alt="Jan Christopher Buen"
+              width="720"
+              height="1008"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
         </section>
         <ClientWork />
@@ -175,7 +142,10 @@ export default function App() {
           </a>
         </section>
         <Stack />
-        <About />
+        <div className="about-experience section">
+          <About />
+          <Experience />
+        </div>
         <Credentials />
         <section
           id="contact"

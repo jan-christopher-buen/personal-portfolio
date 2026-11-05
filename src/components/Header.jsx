@@ -36,6 +36,7 @@ export default function Header() {
           'projects',
           'skills',
           'about',
+          'experience',
           'credentials',
           'contact',
         ]
@@ -47,9 +48,13 @@ export default function Header() {
         const atEnd =
           window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 4
-        setActive(
-          atEnd ? 'contact' : current === 'projects' ? 'work' : current || '',
-        )
+        const section =
+          current === 'projects'
+            ? 'work'
+            : current === 'experience'
+              ? 'about'
+              : current
+        setActive(atEnd ? 'contact' : section || '')
       })
     }
     update()
