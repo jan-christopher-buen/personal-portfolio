@@ -9,16 +9,14 @@ export default function Credentials() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-label">
-            06 / Certifications & learning
-          </p>
+          <p className="eyebrow section-label">06 / Certifications</p>
           <h2 id="credentials-title">
             Always building.
             <br />
             Always learning.
           </h2>
         </div>
-        <p>Study across web development and search, alongside hands-on work.</p>
+        <p>Certifications in web development and search.</p>
       </div>
       <ul className="credential-list">
         {credentials.map((credential) => (
@@ -42,18 +40,6 @@ export default function Credentials() {
           </li>
         ))}
       </ul>
-      <div className="learning-note">
-        <h3>Self-directed learning</h3>
-        <p>
-          I build full-stack JavaScript projects through{' '}
-          <a href="https://www.theodinproject.com/">The Odin Project</a> and
-          continue studying{' '}
-          <a href="https://learn.wordpress.org/">
-            Learn WordPress’s User, Developer, and Designer materials
-          </a>
-          . These are learning resources, separate from certifications.
-        </p>
-      </div>
     </section>
   )
 }

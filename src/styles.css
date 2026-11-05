@@ -715,20 +715,6 @@ main:focus {
   font-size: 0.75rem;
   color: var(--muted);
 }
-.learning-note {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  margin-top: 36px;
-}
-.learning-note h3 {
-  font-size: 1.15rem;
-}
-.learning-note p {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin: 0;
-}
 .contact {
   background: var(--surface);
   border-top: 1px solid var(--line);
@@ -970,10 +956,6 @@ footer a {
   .credential-list a {
     width: fit-content;
     padding: 8px 0;
-  }
-  .learning-note {
-    grid-template-columns: 1fr;
-    gap: 18px;
   }
   .contact-row {
     gap: 30px;

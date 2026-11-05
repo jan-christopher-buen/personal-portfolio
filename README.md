@@ -16,7 +16,7 @@ I built this website for [The Odin Project’s personal website assignment](http
 - **Personal full-stack projects:** Commonroom, Midnight Market, and Signal Post, with screenshots, features, engineering decisions, and live/source links.
 - Capsule badges with locally bundled technology logos and readable labels, grouped into frontend, backend/data, WordPress, testing, and tools/deployment. The selection reflects my client work and public JavaScript projects.
 - About content and an Experience timeline share equal-width desktop columns, stacked on mobile. About stays visible while scrolling the timeline in the desktop layout. The timeline covers my current web role and previous manufacturing and QA roles; the introduction appears once under About, and the About navigation link covers the combined content.
-- Seven certifications and separate self-directed learning through The Odin Project and Learn WordPress, followed by Contact.
+- Six certifications in web development and search, followed by Contact.
 - Neutral dark surfaces with warm orange actions, responsive navigation, visible keyboard focus, a skip link, and motion that respects reduced-motion preferences.
 
 The full-stack applications are personal learning projects, separate from the commercial WordPress work. Their free-hosted APIs may take about a minute to wake; provider limits can affect availability. Follow each source link for setup instructions and limitations.
