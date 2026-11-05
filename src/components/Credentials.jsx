@@ -1,0 +1,59 @@
+import { credentials } from '../data/credentials.js'
+export default function Credentials() {
+  return (
+    <section
+      id="credentials"
+      className="credentials section"
+      tabIndex="-1"
+      aria-labelledby="credentials-title"
+    >
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow section-label">
+            06 / Certifications & learning
+          </p>
+          <h2 id="credentials-title">
+            Always building.
+            <br />
+            Always learning.
+          </h2>
+        </div>
+        <p>Study across web development and search, alongside hands-on work.</p>
+      </div>
+      <ul className="credential-list">
+        {credentials.map((credential) => (
+          <li key={`${credential.issuer}-${credential.title}`}>
+            <div>
+              <h3>{credential.title}</h3>
+              {credential.validity && <span>{credential.validity}</span>}
+            </div>
+            <div className="credential-meta">
+              <span>{credential.issuer}</span>
+              {credential.issued && (
+                <time dateTime={credential.issued}>{credential.date}</time>
+              )}
+            </div>
+            {credential.url && (
+              <a href={credential.url}>
+                View credential <span aria-hidden="true">↗</span>
+                <span className="sr-only"> — {credential.title}</span>
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+      <div className="learning-note">
+        <h3>Self-directed learning</h3>
+        <p>
+          I build full-stack JavaScript projects through{' '}
+          <a href="https://www.theodinproject.com/">The Odin Project</a> and
+          continue studying{' '}
+          <a href="https://learn.wordpress.org/">
+            Learn WordPress’s User, Developer, and Designer materials
+          </a>
+          . These are learning resources, separate from certifications.
+        </p>
+      </div>
+    </section>
+  )
+}

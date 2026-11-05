@@ -1,0 +1,116 @@
+import { useEffect, useRef, useState } from 'react'
+
+const links = [
+  ['work', 'Work'],
+  ['services', 'Services'],
+  ['skills', 'Skills'],
+  ['about', 'About'],
+  ['credentials', 'Credentials'],
+  ['contact', 'Contact'],
+]
+
+export default function Header() {
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState('')
+  const toggle = useRef(null)
+
+  useEffect(() => {
+    function escape(event) {
+      if (event.key === 'Escape' && open) {
+        setOpen(false)
+        toggle.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', escape)
+    return () => document.removeEventListener('keydown', escape)
+  }, [open])
+
+  useEffect(() => {
+    let frame
+    function update() {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const current = [
+          'work',
+          'services',
+          'projects',
+          'skills',
+          'about',
+          'credentials',
+          'contact',
+        ]
+          .filter(
+            (id) =>
+              document.getElementById(id)?.getBoundingClientRect().top <= 160,
+          )
+          .at(-1)
+        const atEnd =
+          window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight - 4
+        setActive(
+          atEnd ? 'contact' : current === 'projects' ? 'work' : current || '',
+        )
+      })
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', update)
+      cancelAnimationFrame(frame)
+    }
+  }, [])
+
+  function navigate(id) {
+    setOpen(false)
+    setActive(id)
+    requestAnimationFrame(() =>
+      document.getElementById(id)?.focus({ preventScroll: true }),
+    )
+  }
+
+  return (
+    <header
+      className="header"
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false)
+      }}
+    >
+      <div className="header-inner">
+        <a
+          className="wordmark"
+          href="#top"
+          aria-label="Jan Christopher Buen — back to top"
+        >
+          jcb<span>.</span>
+        </a>
+        <button
+          ref={toggle}
+          className="menu-toggle"
+          type="button"
+          aria-expanded={open}
+          aria-controls="main-nav"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? 'Close' : 'Menu'}{' '}
+          <span aria-hidden="true">{open ? '−' : '+'}</span>
+        </button>
+        <nav
+          id="main-nav"
+          className={open ? 'navigation is-open' : 'navigation'}
+          aria-label="Main navigation"
+        >
+          {links.map(([id, label]) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-current={active === id ? 'location' : undefined}
+              onClick={() => navigate(id)}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+  )
+}

@@ -5,49 +5,49 @@ export default function ClientWork() {
     <section
       id="work"
       className="client-work section"
+      tabIndex="-1"
       aria-labelledby="client-work-title"
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-label">01 / Client work</p>
+          <p className="eyebrow section-label">01 / Selected client work</p>
           <h2 id="client-work-title">
-            Websites built
+            Commercial websites,
             <br />
-            for everyday business.
+            real contributions.
           </h2>
         </div>
         <p>
-          WordPress development, customization, maintenance, and technical SEO
-          for client websites.
-        </p>
-      </div>
-      <div className="experience">
-        <h3>Web Developer &amp; SEO Specialist</h3>
-        <p>Ironclad Sites &amp; affiliated businesses</p>
-        <p className="experience-details">
-          Part-time · Remote · <time dateTime="2026-03">March 2026</time>
-          –Present
+          WordPress builds, customization, and technical SEO for real
+          businesses. Each entry describes my contribution.
         </p>
       </div>
       <div className="client-grid">
-        {featuredClients.map((client) => (
+        {featuredClients.map((client, index) => (
           <article className="client-entry" key={client.url}>
-            <p className="eyebrow">{client.category}</p>
-            <h3>{client.name}</h3>
-            <p>{client.description}</p>
-            <p>{client.contribution}</p>
-            <ul
-              className="tags"
-              aria-label={`${client.name} tools and features`}
-            >
-              {client.stack.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <a href={client.url}>
-              Visit website <span aria-hidden="true">↗</span>
-              <span className="sr-only"> — {client.name}</span>
-            </a>
+            <div className="client-identity">
+              <span className="client-number" aria-hidden="true">
+                0{index + 1}
+              </span>
+              <p className="eyebrow">{client.category}</p>
+              <h3>{client.name}</h3>
+            </div>
+            <div className="client-details">
+              <p>{client.description}</p>
+              <p>{client.contribution}</p>
+              <ul
+                className="tags"
+                aria-label={`${client.name} tools and features`}
+              >
+                {client.stack.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <a href={client.url}>
+                Visit website <span aria-hidden="true">↗</span>
+                <span className="sr-only"> — {client.name}</span>
+              </a>
+            </div>
           </article>
         ))}
       </div>

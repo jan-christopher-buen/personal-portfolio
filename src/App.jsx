@@ -1,44 +1,43 @@
+import { useEffect } from 'react'
+import Header from './components/Header.jsx'
 import Project from './components/Project.jsx'
 import ClientWork from './components/ClientWork.jsx'
+import Services from './components/Services.jsx'
+import Stack from './components/Stack.jsx'
+import Credentials from './components/Credentials.jsx'
 import { profileUrl, projects } from './data/projects.js'
-
-function Header() {
-  return (
-    <header className="header">
-      <a
-        className="wordmark"
-        href="#top"
-        aria-label="Jan Christopher Buen — back to top"
-      >
-        jcb<span>.</span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">
-          Contact <span aria-hidden="true">↗</span>
-        </a>
-      </nav>
-    </header>
-  )
-}
 
 function About() {
   return (
-    <section id="about" className="about section" aria-labelledby="about-title">
+    <section
+      id="about"
+      className="about section"
+      tabIndex="-1"
+      aria-labelledby="about-title"
+    >
       <div>
-        <p className="eyebrow section-label">03 / A little context</p>
+        <p className="eyebrow section-label">05 / About & experience</p>
         <h2 id="about-title">
-          Curious about the
+          Careful with the details.
           <br />
-          whole picture.
+          Curious about the whole.
         </h2>
-      </div>
-      <div className="about-copy">
-        <p className="large-copy">
+        <p className="about-intro">
           I’m Jan Christopher Buen, a web developer working across WordPress
           websites, full-stack JavaScript projects, and technical SEO.
         </p>
+      </div>
+      <div className="about-copy">
+        <div className="experience">
+          <p className="eyebrow">Current experience</p>
+          <h3>Web Developer &amp; SEO Specialist</h3>
+          <p>Ironclad Sites &amp; affiliated businesses</p>
+          <p className="experience-details">
+            Part-time · Remote
+            <br />
+            <time dateTime="2026-03">March 2026</time>–Present
+          </p>
+        </div>
         <p>
           My client work includes building and customizing WordPress websites,
           maintaining them, and managing hosting. I work with PHP, custom child
@@ -46,54 +45,44 @@ function About() {
           manageable and support business needs.
         </p>
         <p>
-          Alongside that work, I build personal projects through The Odin
-          Project, connecting React interfaces to Express APIs and PostgreSQL. I
-          focus on usable, responsive interfaces, clear feedback, and deliberate
-          data boundaries as I develop my full-stack skills.
+          Alongside that work, I build personal applications with React,
+          Express, and PostgreSQL. My engineering and QA background informs a
+          careful approach to troubleshooting, checking behavior, and
+          documenting decisions.
         </p>
         <p>
-          I continue studying Learn WordPress’s{' '}
-          <a href="https://learn.wordpress.org/">
-            User, Developer, and Designer learning materials
-          </a>{' '}
-          to deepen my understanding of the platform.
+          I value useful interfaces, recoverable errors, and clear data
+          boundaries. Each project is an opportunity to understand how those
+          pieces work together.
         </p>
-        <div className="skills">
-          <h3>Tools put into practice</h3>
-          <dl>
-            <div>
-              <dt>Interface</dt>
-              <dd>JavaScript · React · HTML · CSS</dd>
-            </div>
-            <div>
-              <dt>Server & data</dt>
-              <dd>Node.js · Express · Prisma · PostgreSQL</dd>
-            </div>
-            <div>
-              <dt>WordPress</dt>
-              <dd>
-                PHP · Custom child themes · ACF · WooCommerce · Custom plugins
-              </dd>
-            </div>
-            <div>
-              <dt>Site care &amp; SEO</dt>
-              <dd>
-                Hosting management · Technical SEO · Structured data ·
-                Responsive design
-              </dd>
-            </div>
-            <div>
-              <dt>Workflow</dt>
-              <dd>Git · npm · Vite · ESLint · Prettier</dd>
-            </div>
-          </dl>
-        </div>
       </div>
     </section>
   )
 }
 
 export default function App() {
+  useEffect(() => {
+    if (
+      !('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    )
+      return
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('section-enter')
+            observer.unobserve(entry.target)
+          }
+        }),
+      { threshold: 0.06 },
+    )
+    document
+      .querySelectorAll('.section')
+      .forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
+  const folio = projects.find((project) => project.id === 'folio')
   return (
     <>
       <a className="skip-link" href="#main">
@@ -103,41 +92,65 @@ export default function App() {
       <Header />
       <main id="main" tabIndex="-1">
         <section className="hero" aria-labelledby="intro-title">
-          <div className="hero-topline">
-            <p className="eyebrow">Jan Christopher Buen</p>
-            <p className="eyebrow hero-role">Web Developer</p>
-          </div>
-          <h1 id="intro-title">
-            Thoughtful interfaces.
-            <br />
-            <span>Solid foundations.</span>
-          </h1>
-          <div className="hero-bottom">
-            <p>
-              I build and maintain WordPress websites with technical SEO in
-              mind, alongside full-stack JavaScript projects. My focus is
-              useful, responsive interfaces backed by thoughtful implementation.
-            </p>
-            <a className="button" href="#work">
-              Explore my work <span aria-hidden="true">↓</span>
-            </a>
-          </div>
-          <div className="hero-footnote">
-            <span>WordPress / JavaScript / Technical SEO</span>
-            <span aria-hidden="true">
-              From usable interfaces to maintainable websites.
-            </span>
+          <div className="hero-layout">
+            <div className="hero-copy">
+              <p className="eyebrow">
+                <span className="identity-line" aria-hidden="true" />
+                Jan Christopher Buen / Web Developer
+              </p>
+              <h1 id="intro-title">
+                Useful websites.
+                <br />
+                <span>Thoughtful</span>
+                <br />
+                implementation.
+              </h1>
+              <p className="hero-description">
+                I build full-stack JavaScript applications and WordPress
+                websites, bringing technical SEO and careful site maintenance
+                into the same workflow.
+              </p>
+              <div className="hero-actions">
+                <a className="button" href="#work">
+                  View My Work <span aria-hidden="true">↗</span>
+                </a>
+                <a className="secondary-action" href="#contact">
+                  Let’s Talk <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <p className="hero-caption">
+                Client websites. Personal applications. Continuous learning.
+              </p>
+            </div>
+            <figure className="hero-portrait">
+              <div className="portrait-frame">
+                <img
+                  src="/images/jan-christopher-buen.jpg"
+                  alt="Jan Christopher Buen"
+                  width="720"
+                  height="1008"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </div>
+              <figcaption>
+                <span>Jan Christopher Buen</span>
+                <span>Web Developer</span>
+              </figcaption>
+            </figure>
           </div>
         </section>
         <ClientWork />
+        <Services />
         <section
           id="projects"
           className="work section"
+          tabIndex="-1"
           aria-labelledby="work-title"
         >
           <div className="section-heading">
             <div>
-              <p className="eyebrow section-label">02 / Personal projects</p>
+              <p className="eyebrow section-label">03 / Full-stack projects</p>
               <h2 id="work-title">
                 Built to learn.
                 <br />
@@ -145,56 +158,81 @@ export default function App() {
               </h2>
             </div>
             <p>
-              Four personal projects from The Odin Project. Each one is a
-              different exercise in turning an idea into a working application.
+              Personal and curriculum projects from The Odin Project. A closer
+              look at application logic, data models, and usable interfaces.
             </p>
           </div>
           <p className="demo-note">
-            <span aria-hidden="true">↳</span> These learning demos use free
-            hosting. Their APIs may take about a minute to wake, and provider
-            limits can affect availability.
+            Learning demos use free hosting. APIs may take about a minute to
+            wake; provider limits can affect availability.
           </p>
           <div className="projects">
-            {projects.map((project, index) => (
-              <Project key={project.id} project={project} index={index} />
-            ))}
+            {projects
+              .filter((project) => project.id !== 'folio')
+              .map((project, index) => (
+                <Project key={project.id} project={project} index={index} />
+              ))}
           </div>
+          <article className="compact-project">
+            <div>
+              <p className="eyebrow">Also built / Personal project</p>
+              <h3>{folio.name}</h3>
+              <p>
+                {folio.summary} {folio.features}
+              </p>
+              <p className="compact-decision">{folio.decision}</p>
+              <ul className="tags" aria-label="Folio technologies">
+                {folio.stack.map((tool) => (
+                  <li key={tool}>{tool}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="project-links">
+              <a href={folio.demo}>Folio demo ↗</a>
+              <a href={folio.source}>Folio source ↗</a>
+            </div>
+          </article>
           <a className="text-link all-work" href={profileUrl}>
-            More experiments on GitHub <span aria-hidden="true">↗</span>
+            More work on GitHub <span aria-hidden="true">↗</span>
           </a>
         </section>
+        <Stack />
         <About />
+        <Credentials />
         <section
           id="contact"
           className="contact section"
+          tabIndex="-1"
           aria-labelledby="contact-title"
         >
-          <p className="eyebrow">04 / Keep in touch</p>
+          <p className="eyebrow section-label">07 / Contact</p>
           <div className="contact-row">
-            <h2 id="contact-title">
-              Let’s talk
-              <br />
-              <span>about the work.</span>
-            </h2>
+            <div>
+              <h2 id="contact-title">
+                Have a website in mind?
+                <br />
+                <span>Let’s talk.</span>
+              </h2>
+              <p>
+                For client projects, developer opportunities, or a conversation
+                about the work.
+              </p>
+            </div>
             <div className="contact-options">
-              <a
-                className="contact-link"
-                href="mailto:buenjanchristopher@gmail.com"
-              >
+              <a className="button" href="mailto:buenjanchristopher@gmail.com">
                 Send me an email <span aria-hidden="true">↗</span>
               </a>
-              <span className="contact-address">
+              <a
+                className="contact-address"
+                href="mailto:buenjanchristopher@gmail.com"
+              >
                 buenjanchristopher@gmail.com
-              </span>
-              <a className="github-contact" href={profileUrl}>
+              </a>
+              <a href={profileUrl}>
                 Find me on GitHub <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
-          <p>
-            Explore the code, follow what I’m building, or leave feedback on a
-            project.
-          </p>
         </section>
       </main>
       <footer>
