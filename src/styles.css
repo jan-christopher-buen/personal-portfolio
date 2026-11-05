@@ -271,11 +271,6 @@ main:focus {
   font-size: 0.85rem;
   padding: 12px 0;
 }
-.hero-caption {
-  margin: 28px 0 0;
-  color: var(--muted);
-  font-size: 0.7rem;
-}
 .client-work {
   border-top: 1px solid var(--line);
   background: var(--surface);
@@ -299,10 +294,13 @@ main:focus {
   padding: 28px;
   transition:
     background 0.2s,
+    border-color 0.2s,
     transform 0.2s;
 }
-.client-card:hover {
+.client-card:hover,
+.client-card:focus-within {
   background: var(--raised);
+  border-color: var(--accent);
   transform: translateY(-3px);
 }
 .client-card > .eyebrow {
@@ -387,10 +385,13 @@ main:focus {
   flex-direction: column;
   transition:
     background 0.2s,
+    border-color 0.2s,
     transform 0.2s;
 }
-.service-grid article:hover {
+.service-grid article:hover,
+.service-grid article:focus-within {
   background: var(--raised);
+  border-color: var(--accent);
   transform: translateY(-3px);
 }
 .service-icon {
@@ -760,7 +761,8 @@ main:focus {
   justify-content: center;
   gap: 12px;
 }
-.contact-actions .button,
+button,
+.button,
 .contact-github {
   border-radius: 10px;
 }
@@ -815,19 +817,69 @@ main:focus {
 }
 @keyframes enter {
   from {
-    opacity: 0.3;
-    transform: translateY(12px);
+    transform: translateY(24px);
   }
   to {
-    opacity: 1;
     transform: translateY(0);
   }
 }
-.hero-copy {
-  animation: enter 0.5s ease-out both;
+.hero-copy > * {
+  animation: enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
-.section-enter {
-  animation: enter 0.4s ease-out;
+.hero-copy > :nth-child(2) {
+  animation-delay: 60ms;
+}
+.hero-copy > :nth-child(3) {
+  animation-delay: 120ms;
+}
+.hero-copy > :nth-child(4) {
+  animation-delay: 180ms;
+}
+@keyframes portrait-reveal {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+.hero-portrait img {
+  animation: portrait-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 100ms backwards;
+}
+.button > span[aria-hidden],
+.secondary-action > span[aria-hidden],
+.contact-github > span[aria-hidden] {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+}
+.button:is(:hover, :focus-visible) > span[aria-hidden],
+.secondary-action:is(:hover, :focus-visible) > span[aria-hidden],
+.contact-github:is(:hover, :focus-visible) > span[aria-hidden] {
+  transform: translate(2px, -2px);
+}
+.timeline-dot {
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.timeline-entry:is(:hover, :focus-within) .timeline-dot {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgb(255 155 84 / 10%);
+}
+.reveal-enter {
+  animation: enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+.client-grid > .reveal-enter:nth-child(2),
+.service-grid > .reveal-enter:nth-child(2) {
+  animation-delay: 80ms;
+}
+.client-grid > .reveal-enter:nth-child(3),
+.service-grid > .reveal-enter:nth-child(3) {
+  animation-delay: 160ms;
+}
+.service-grid > .reveal-enter:nth-child(4) {
+  animation-delay: 240ms;
 }
 @media (min-width: 761px) {
   .about {
@@ -933,10 +985,6 @@ main:focus {
   .hero-description {
     font-size: 0.95rem;
   }
-  .hero-caption {
-    max-width: 320px;
-    line-height: 1.7;
-  }
   .section {
     padding: 58px 22px;
   }
@@ -1010,6 +1058,15 @@ main:focus {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .client-card:is(:hover, :focus-within),
+  .service-grid article:is(:hover, :focus-within),
+  .button:is(:hover, :active),
+  .project-image:hover img,
+  .button > span[aria-hidden],
+  .secondary-action > span[aria-hidden],
+  .contact-github > span[aria-hidden] {
+    transform: none !important;
   }
   *,
   *::before,

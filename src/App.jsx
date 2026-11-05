@@ -40,25 +40,36 @@ function About() {
 
 export default function App() {
   useEffect(() => {
-    if (
-      !('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    )
-      return
+    if (!('IntersectionObserver' in window)) return
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)')
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('section-enter')
+          if (entry.isIntersecting && !motion.matches) {
+            entry.target.classList.add('reveal-enter')
             observer.unobserve(entry.target)
           }
         }),
-      { threshold: 0.06 },
+      { threshold: 0.01, rootMargin: '0px 0px 48px 0px' },
     )
-    document
-      .querySelectorAll('.section')
-      .forEach((section) => observer.observe(section))
-    return () => observer.disconnect()
+    function observeContent() {
+      observer.disconnect()
+      if (motion.matches) return
+      document
+        .querySelectorAll(
+          '.section-heading, .client-card, .service-grid article, .project, .stack-list > div, .about-content, .timeline-entry, .credential-list > li, .contact-panel',
+        )
+        .forEach((element) => {
+          if (!element.classList.contains('reveal-enter'))
+            observer.observe(element)
+        })
+    }
+    observeContent()
+    motion.addEventListener('change', observeContent)
+    return () => {
+      observer.disconnect()
+      motion.removeEventListener('change', observeContent)
+    }
   }, [])
   return (
     <>
@@ -92,9 +103,6 @@ export default function App() {
                 Let’s Talk <span aria-hidden="true">↗</span>
               </a>
             </div>
-            <p className="hero-caption">
-              Client websites. Personal applications. Continuous learning.
-            </p>
           </div>
           <div className="hero-portrait">
             <img
