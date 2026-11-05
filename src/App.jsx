@@ -82,7 +82,6 @@ export default function App() {
       .forEach((section) => observer.observe(section))
     return () => observer.disconnect()
   }, [])
-  const folio = projects.find((project) => project.id === 'folio')
   return (
     <>
       <a className="skip-link" href="#main">
@@ -162,36 +161,15 @@ export default function App() {
               look at application logic, data models, and usable interfaces.
             </p>
           </div>
+          <div className="projects">
+            {projects.map((project, index) => (
+              <Project key={project.id} project={project} index={index} />
+            ))}
+          </div>
           <p className="demo-note">
             Learning demos use free hosting. APIs may take about a minute to
             wake; provider limits can affect availability.
           </p>
-          <div className="projects">
-            {projects
-              .filter((project) => project.id !== 'folio')
-              .map((project, index) => (
-                <Project key={project.id} project={project} index={index} />
-              ))}
-          </div>
-          <article className="compact-project">
-            <div>
-              <p className="eyebrow">Also built / Personal project</p>
-              <h3>{folio.name}</h3>
-              <p>
-                {folio.summary} {folio.features}
-              </p>
-              <p className="compact-decision">{folio.decision}</p>
-              <ul className="tags" aria-label="Folio technologies">
-                {folio.stack.map((tool) => (
-                  <li key={tool}>{tool}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="project-links">
-              <a href={folio.demo}>Folio demo ↗</a>
-              <a href={folio.source}>Folio source ↗</a>
-            </div>
-          </article>
           <a className="text-link all-work" href={profileUrl}>
             More work on GitHub <span aria-hidden="true">↗</span>
           </a>

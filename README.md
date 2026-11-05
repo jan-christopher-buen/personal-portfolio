@@ -11,9 +11,9 @@ I built this website for [The Odin Project’s personal website assignment](http
 ## What you can explore
 
 - A portrait introduction with direct work and contact links.
-- **Commercial client work:** Rossi Moves the East, Ironclad Sites, and Paver Sealing Academy, plus compact contributions for Nexora Technologies and Practical Exterior Maintenance. The latter is clearly identified as a redesign of an existing website.
+- **Commercial client work:** featured cards for Rossi Moves the East, Practical Exterior Maintenance, and Nexora Technologies. A “Show more client work” control reveals matching cards for Ironclad Sites and Paver Sealing Academy. Practical Exterior Maintenance is clearly identified as a redesign of an existing website.
 - **Services:** WordPress websites, redesign and maintenance, technical SEO setup, and custom web applications supported by personal-project examples.
-- **Personal full-stack projects:** Commonroom, Midnight Market, and Signal Post, with screenshots, features, engineering decisions, and live/source links. Folio remains available as a compact file-manager entry.
+- **Personal full-stack projects:** Commonroom, Midnight Market, and Signal Post, with screenshots, features, engineering decisions, and live/source links.
 - Skills grouped into frontend, backend/data, WordPress, and tools/deployment.
 - Current experience, seven certifications, and separate self-directed learning through The Odin Project and Learn WordPress.
 - Neutral dark surfaces with warm orange actions, responsive navigation, visible keyboard focus, a skip link, and motion that respects reduced-motion preferences.

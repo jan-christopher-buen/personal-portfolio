@@ -1,4 +1,4 @@
-export const featuredClients = [
+const clients = [
   {
     name: 'Rossi Moves the East',
     category: 'Real estate',
@@ -29,19 +29,37 @@ export const featuredClients = [
       'Implemented an application funnel and GA4 tracking to support the program’s application process.',
     stack: ['WordPress', 'Application funnel', 'GA4'],
   },
-]
 
-export const additionalClients = [
   {
     name: 'Nexora Technologies',
+    category: 'Company website',
+    description:
+      'Built the company website from scratch and currently manage hosting.',
+    stack: ['WordPress', 'Website development', 'Hosting'],
     url: 'https://nexorany.com/',
     contribution:
-      'Built the company website from scratch and currently manage hosting. Nexora offers websites, apps, and custom software; my contribution here was its company website.',
+      'Nexora offers websites, apps, and custom software; my contribution here was its company website.',
   },
   {
     name: 'Practical Exterior Maintenance',
+    category: 'Website redesign & local SEO',
+    description:
+      'Redesigned an existing exterior-maintenance website and currently manage its hosting.',
+    stack: ['WordPress', 'ACF', 'Local SEO'],
     url: 'https://practicalexteriormaintenance.com/',
     contribution:
-      'Redesigned the existing website, made content editable with ACF, and worked on local SEO. Currently manage hosting; I did not build the original website.',
+      'Made content editable with ACF and worked on local SEO. My contribution was the redesign and ongoing care, not the original website build.',
   },
 ]
+
+const featuredNames = [
+  'Rossi Moves the East',
+  'Practical Exterior Maintenance',
+  'Nexora Technologies',
+]
+export const featuredClients = featuredNames.map((name) =>
+  clients.find((client) => client.name === name),
+)
+export const additionalClients = clients.filter(
+  (client) => !featuredNames.includes(client.name),
+)

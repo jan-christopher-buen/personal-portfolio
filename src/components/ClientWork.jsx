@@ -1,6 +1,28 @@
+import { useState } from 'react'
 import { additionalClients, featuredClients } from '../data/clientWork.js'
 
+function ClientCard({ client }) {
+  return (
+    <article className="client-card">
+      <p className="eyebrow">{client.category}</p>
+      <h3>{client.name}</h3>
+      <p className="client-summary">{client.description}</p>
+      <p className="client-contribution">{client.contribution}</p>
+      <ul className="tags" aria-label={`${client.name} tools and features`}>
+        {client.stack.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <a href={client.url}>
+        Visit website <span aria-hidden="true">↗</span>
+        <span className="sr-only"> — {client.name}</span>
+      </a>
+    </article>
+  )
+}
+
 export default function ClientWork() {
+  const [expanded, setExpanded] = useState(false)
   return (
     <section
       id="work"
@@ -23,56 +45,31 @@ export default function ClientWork() {
         </p>
       </div>
       <div className="client-grid">
-        {featuredClients.map((client, index) => (
-          <article className="client-entry" key={client.url}>
-            <div className="client-identity">
-              <span className="client-number" aria-hidden="true">
-                0{index + 1}
-              </span>
-              <p className="eyebrow">{client.category}</p>
-              <h3>{client.name}</h3>
-            </div>
-            <div className="client-details">
-              <p>{client.description}</p>
-              <p>{client.contribution}</p>
-              <ul
-                className="tags"
-                aria-label={`${client.name} tools and features`}
-              >
-                {client.stack.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              <a href={client.url}>
-                Visit website <span aria-hidden="true">↗</span>
-                <span className="sr-only"> — {client.name}</span>
-              </a>
-            </div>
-          </article>
+        {featuredClients.map((client) => (
+          <ClientCard key={client.url} client={client} />
         ))}
       </div>
-      <div className="additional-work">
-        <h3>More client contributions</h3>
+      <div className="client-disclosure">
+        <button
+          className="client-toggle"
+          type="button"
+          aria-expanded={expanded}
+          aria-controls="additional-client-work"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? 'Show fewer projects' : 'Show more client work'}{' '}
+          <span aria-hidden="true">{expanded ? '−' : '+'}</span>
+        </button>
+      </div>
+      <div
+        id="additional-client-work"
+        className="client-grid additional-client-grid"
+        hidden={!expanded}
+      >
         {additionalClients.map((client) => (
-          <div className="additional-entry" key={client.url}>
-            <h4>
-              <a href={client.url}>
-                {client.name} <span aria-hidden="true">↗</span>
-              </a>
-            </h4>
-            <p>{client.contribution}</p>
-          </div>
+          <ClientCard key={client.url} client={client} />
         ))}
       </div>
-      <p className="client-note">
-        Across this work, I configured page titles, meta descriptions, sitemaps,
-        and structured data, including a custom schema plugin when existing
-        plugins did not meet the requirements.
-      </p>
-      <a className="text-link" href="#projects">
-        Explore my full-stack JavaScript projects{' '}
-        <span aria-hidden="true">↓</span>
-      </a>
     </section>
   )
 }

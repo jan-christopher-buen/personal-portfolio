@@ -49,22 +49,6 @@ export const projects = [
     image: '/images/signal.webp',
     alt: 'Signal Post public welcome and sign-in screen.',
   },
-  {
-    id: 'folio',
-    name: 'Folio',
-    category: 'Private file manager',
-    summary:
-      'A personal workspace for organizing files into folders and keeping downloads private.',
-    features:
-      'Account-based folders, file uploads, file details, downloads, and deletion in a responsive server-rendered interface.',
-    decision:
-      'Owner-scoped queries protect file access. Row locks serialize quota changes, while failed database writes trigger storage cleanup to reduce orphaned uploads.',
-    stack: ['Node.js', 'Express', 'EJS', 'Prisma', 'PostgreSQL'],
-    source: `${github}/odin-file-uploader`,
-    demo: 'https://odin-file-uploader-k9d5.onrender.com',
-    image: '/images/folio.webp',
-    alt: 'Folio public sign-in page for the private file workspace.',
-  },
 ]
 
 export const profileUrl = github
