@@ -539,9 +539,9 @@ main:focus {
 }
 .stack-list > div {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: minmax(180px, 0.65fr) minmax(0, 2fr);
   gap: 36px;
-  align-items: baseline;
+  align-items: start;
   padding: 24px 0;
   border-top: 1px solid var(--line);
 }
@@ -561,10 +561,36 @@ main:focus {
 .stack-tools {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 24px;
+  gap: 10px;
   margin: 0;
-  font-size: 0.9rem;
-  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.stack-tools li {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--background);
+}
+.stack-tools li > span:last-child {
+  min-width: 0;
+  line-height: 1.4;
+}
+.stack-tool-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.stack-tool-icon-light {
+  filter: brightness(0) invert(1);
 }
 .about {
   display: grid;
@@ -878,10 +904,6 @@ footer a {
   .stack-list > div {
     grid-template-columns: 1fr;
     gap: 18px;
-  }
-  .stack-tools {
-    font-size: 0.85rem;
-    gap: 10px 20px;
   }
   .about {
     grid-template-columns: 1fr;

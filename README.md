@@ -14,7 +14,7 @@ I built this website for [The Odin Project’s personal website assignment](http
 - **Commercial client work:** featured cards for Rossi Moves the East, Practical Exterior Maintenance, and Nexora Technologies. A “Show more client work” control reveals matching cards for Ironclad Sites and Paver Sealing Academy. Practical Exterior Maintenance is clearly identified as a redesign of an existing website.
 - **Services:** WordPress websites, redesign and maintenance, technical SEO setup, and custom web applications supported by personal-project examples.
 - **Personal full-stack projects:** Commonroom, Midnight Market, and Signal Post, with screenshots, features, engineering decisions, and live/source links.
-- Skills grouped into frontend, backend/data, WordPress, and tools/deployment.
+- Capsule badges with locally bundled technology logos and readable labels, grouped into frontend, backend/data, WordPress, testing, and tools/deployment. The selection reflects my client work and public JavaScript projects.
 - Current experience, seven certifications, and separate self-directed learning through The Odin Project and Learn WordPress.
 - Neutral dark surfaces with warm orange actions, responsive navigation, visible keyboard focus, a skip link, and motion that respects reduced-motion preferences.
 
@@ -67,6 +67,8 @@ The contact section includes my approved email address and verified GitHub profi
 ## Assets and references
 
 The portrait was supplied by Jan Christopher Buen for this portfolio. The monogram favicon and visual identity were created for this portfolio. Project images are actual browser captures of my own applications’ public landing/sign-in pages; they do not include private conversations or account data. Midnight Market’s original illustration is covered by [its repository’s MIT license](https://github.com/jan-christopher-buen/odin-wheres-waldo). Screenshots are optimized to WebP.
+
+Technology logos come from [Devicon](https://github.com/devicons/devicon) (MIT) and [Simple Icons](https://github.com/simple-icons/simple-icons) (CC0). Their license texts are included in `public/icons/`. The ACF wordmark comes from the [official Advanced Custom Fields website](https://www.advancedcustomfields.com/). The Linux mark represents my Linux/WSL environment. Monochrome marks use a light variant for the dark background. All logos are served locally.
 
 Typography uses [DM Sans](https://fonts.google.com/specimen/DM+Sans) and [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk), available under the SIL Open Font License and loaded from Google Fonts with system-font fallbacks. Font delivery requires an internet connection; the page remains usable without it.
 

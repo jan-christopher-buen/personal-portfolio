@@ -1,23 +1,44 @@
+import StackIcon from './StackIcon.jsx'
+
 const groups = [
-  { label: 'Frontend', tools: ['HTML', 'CSS', 'JavaScript', 'React'] },
   {
-    label: 'Backend & data',
-    tools: ['Node.js', 'Express', 'PostgreSQL', 'Prisma'],
+    label: 'Frontend',
+    tools: ['HTML', 'CSS', 'JavaScript', 'React', 'React Router'],
   },
   {
-    label: 'WordPress',
+    label: 'Backend & data',
     tools: [
-      'WordPress',
-      'PHP',
-      'ACF',
-      'WooCommerce',
-      'Custom child themes',
-      'Custom plugins',
+      'Node.js',
+      'Express',
+      'Passport',
+      'PostgreSQL',
+      'Prisma',
+      'Supabase Storage',
     ],
   },
   {
+    label: 'WordPress',
+    tools: ['WordPress', 'PHP', 'WooCommerce', 'ACF', 'Elementor'],
+  },
+  {
+    label: 'Testing',
+    tools: ['Jest', 'Vitest'],
+  },
+  {
     label: 'Tools & deployment',
-    tools: ['Git', 'GitHub', 'VS Code', 'WSL', 'Vercel', 'Render'],
+    tools: [
+      'Git',
+      'GitHub',
+      'VS Code',
+      'Linux / WSL',
+      'Vite',
+      'Webpack',
+      'Babel',
+      'npm',
+      'Vercel',
+      'Render',
+      'Hostinger',
+    ],
   },
 ]
 
@@ -53,7 +74,10 @@ export default function Stack() {
             <dd>
               <ul className="stack-tools">
                 {group.tools.map((tool) => (
-                  <li key={tool}>{tool}</li>
+                  <li key={tool}>
+                    <StackIcon name={tool} />
+                    <span>{tool}</span>
+                  </li>
                 ))}
               </ul>
             </dd>
