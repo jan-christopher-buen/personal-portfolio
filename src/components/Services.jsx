@@ -71,7 +71,7 @@ export default function Services() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-label">02 / Services</p>
+          <p className="eyebrow section-label">Services</p>
           <h2 id="services-title">
             From a business website
             <br />

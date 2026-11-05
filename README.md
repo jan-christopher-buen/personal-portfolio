@@ -16,7 +16,7 @@ I built this website for [The Odin Project’s personal website assignment](http
 - **Personal full-stack projects:** Commonroom, Midnight Market, and Signal Post, with screenshots, features, engineering decisions, and live/source links.
 - Capsule badges with locally bundled technology logos and readable labels, grouped into frontend, backend/data, WordPress, testing, and tools/deployment. The selection reflects my client work and public JavaScript projects.
 - About content and an Experience timeline share equal-width desktop columns, stacked on mobile. About stays visible while scrolling the timeline in the desktop layout. The timeline covers my current web role and previous manufacturing and QA roles; the introduction appears once under About, and the About navigation link covers the combined content.
-- Six certifications in web development and search, followed by Contact.
+- Six certifications in web development and search, followed by a focused contact panel with email and GitHub actions, plus a minimal footer with copyright and navigation links.
 - Neutral dark surfaces with warm orange actions, responsive navigation, visible keyboard focus, a skip link, and motion that respects reduced-motion preferences.
 
 The full-stack applications are personal learning projects, separate from the commercial WordPress work. Their free-hosted APIs may take about a minute to wake; provider limits can affect availability. Follow each source link for setup instructions and limitations.
@@ -62,7 +62,7 @@ docs/                          Screenshot of the completed portfolio
 index.html                     Page title, description, and social metadata
 ```
 
-Edit the modules in `src/data/` to update client work, personal projects, credentials, or experience. Only add credential dates and verification URLs supported by the certificate or issuer. When replacing a personal-project screenshot in `public/images/`, keep its alternative text and dimensions accurate. Update the introduction, about text, and contact profile in `src/App.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
+Edit the modules in `src/data/` to update client work, personal projects, credentials, or experience. Only add credential dates and verification URLs supported by the certificate or issuer. When replacing a personal-project screenshot in `public/images/`, keep its alternative text and dimensions accurate. Update the introduction and about text in `src/App.jsx`, and contact details in `src/components/Contact.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
 
 The contact section includes my approved email address and verified GitHub profile. No résumé is published. The page uses the confirmed production URL for canonical and Open Graph URL metadata. No social image is configured.
 

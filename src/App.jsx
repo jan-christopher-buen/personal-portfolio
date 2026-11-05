@@ -5,6 +5,7 @@ import ClientWork from './components/ClientWork.jsx'
 import Services from './components/Services.jsx'
 import Stack from './components/Stack.jsx'
 import Credentials from './components/Credentials.jsx'
+import Contact from './components/Contact.jsx'
 import Experience from './components/Experience.jsx'
 import { profileUrl, projects } from './data/projects.js'
 
@@ -17,7 +18,7 @@ function About() {
       aria-labelledby="about-title"
     >
       <div className="about-content">
-        <p className="eyebrow section-label">05 / About</p>
+        <p className="eyebrow section-label">About</p>
         <h2 id="about-title">
           Careful with the details.
           <br />
@@ -116,7 +117,7 @@ export default function App() {
         >
           <div className="section-heading">
             <div>
-              <p className="eyebrow section-label">03 / Full-stack projects</p>
+              <p className="eyebrow section-label">Full-stack projects</p>
               <h2 id="work-title">
                 Built to learn.
                 <br />
@@ -147,50 +148,20 @@ export default function App() {
           <Experience />
         </div>
         <Credentials />
-        <section
-          id="contact"
-          className="contact section"
-          tabIndex="-1"
-          aria-labelledby="contact-title"
-        >
-          <p className="eyebrow section-label">07 / Contact</p>
-          <div className="contact-row">
-            <div>
-              <h2 id="contact-title">
-                Have a website in mind?
-                <br />
-                <span>Let’s talk.</span>
-              </h2>
-              <p>
-                For client projects, developer opportunities, or a conversation
-                about the work.
-              </p>
-            </div>
-            <div className="contact-options">
-              <a className="button" href="mailto:buenjanchristopher@gmail.com">
-                Send me an email <span aria-hidden="true">↗</span>
-              </a>
-              <a
-                className="contact-address"
-                href="mailto:buenjanchristopher@gmail.com"
-              >
-                buenjanchristopher@gmail.com
-              </a>
-              <a href={profileUrl}>
-                Find me on GitHub <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </section>
+        <Contact />
       </main>
-      <footer>
-        <a href="#top">
-          Jan Christopher Buen <span aria-hidden="true">↑</span>
-        </a>
-        <p>Built with React, care, and curiosity.</p>
-        <a href={`${profileUrl}/personal-portfolio`}>
-          Site source <span aria-hidden="true">↗</span>
-        </a>
+      <footer className="site-footer">
+        <p>© {new Date().getFullYear()} Jan Christopher Buen</p>
+        <nav className="footer-links" aria-label="Footer navigation">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href={profileUrl}>
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a href={`${profileUrl}/personal-portfolio`}>
+            Source code <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
       </footer>
     </>
   )

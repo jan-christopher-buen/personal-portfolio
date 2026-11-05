@@ -52,7 +52,7 @@ export default function Stack() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-label">04 / Tech stack</p>
+          <p className="eyebrow section-label">Tech stack</p>
           <h2 id="stack-title">
             The tools behind
             <br />

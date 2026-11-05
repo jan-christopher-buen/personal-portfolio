@@ -32,7 +32,7 @@ export default function ClientWork() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-label">01 / Selected client work</p>
+          <p className="eyebrow section-label">Selected client work</p>
           <h2 id="client-work-title">
             Commercial websites,
             <br />

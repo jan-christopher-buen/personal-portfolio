@@ -9,7 +9,7 @@ export default function Credentials() {
     >
       <div className="section-heading">
         <div>
-          <p className="eyebrow section-label">06 / Certifications</p>
+          <p className="eyebrow section-label">Certifications</p>
           <h2 id="credentials-title">
             Always building.
             <br />
