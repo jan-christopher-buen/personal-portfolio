@@ -645,3 +645,119 @@ footer a:first-child {
   font-size: 0.85rem;
   margin-top: 10px;
 }
+
+.client-work {
+  border-bottom: 1px solid var(--line);
+}
+.experience {
+  margin-top: 40px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.experience h3 {
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 10px;
+}
+.experience p {
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+.experience .experience-details {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 40px 0;
+}
+.client-entry {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.client-entry .eyebrow {
+  color: var(--muted);
+}
+.client-entry h3 {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}
+.client-entry > p:not(.eyebrow) {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.client-entry .tags {
+  margin-top: auto;
+  padding-top: 10px;
+}
+.client-entry > a {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.additional-work {
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+}
+.additional-work > h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+.additional-entry {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+  margin-bottom: 18px;
+}
+.additional-entry h4 {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.additional-entry p,
+.client-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.client-note {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 24px;
+}
+.client-work > .text-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+.client-entry h3,
+.additional-entry h4 {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 800px) {
+  .client-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .client-entry + .client-entry {
+    border-top: 1px solid var(--line);
+    padding-top: 30px;
+  }
+  .client-entry h3 {
+    font-size: 2rem;
+  }
+  .client-entry .tags {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .additional-entry {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

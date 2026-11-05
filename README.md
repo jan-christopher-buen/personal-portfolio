@@ -1,8 +1,8 @@
 # Jan Christopher Buen — Developer Portfolio
 
-A personal portfolio for hiring managers, developers, and anyone who wants to explore my work as a junior full-stack developer. It introduces what I build, explains a few engineering decisions, and links directly to the projects and their source.
+A personal portfolio for hiring managers, developers, and anyone who wants to explore my WordPress client work, technical SEO experience, and personal full-stack JavaScript projects. It introduces what I build, explains a few engineering decisions, and links directly to the projects and their source.
 
-I built this website for [The Odin Project’s personal website assignment](https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website), to bring my learning projects together in one clear, approachable place.
+I built this website for [The Odin Project’s personal website assignment](https://www.theodinproject.com/lessons/node-path-getting-hired-building-your-personal-website), to bring my work together in one clear, approachable place. It now also documents my WordPress client contributions.
 
 ![The portfolio’s introduction and selected work on a desktop screen](docs/portfolio-desktop.webp)
 
@@ -10,15 +10,18 @@ I built this website for [The Odin Project’s personal website assignment](http
 
 ## What you can explore
 
-- An introduction, four selected projects, a short about section, demonstrated skills, and my GitHub profile.
+- An introduction, commercial client work, four selected personal projects, an about section, demonstrated skills, and contact links.
+- **Client work:** featured contributions to Rossi Moves the East, Ironclad Sites, and Paver Sealing Academy, with compact entries for Nexora Technologies and Practical Exterior Maintenance.
+- WordPress builds, child-theme and plugin customization, ACF, WooCommerce, hosting management, and technical SEO. Practical Exterior Maintenance is identified as a redesign of an existing site.
+- A brief learning note about Learn WordPress’s User, Developer, and Designer materials; these are learning resources, not certifications.
 - **Commonroom:** social feeds, directed follows, posts, likes, and comments.
 - **Midnight Market:** an illustrated search game with keyboard controls and server-owned scoring.
 - **Signal Post:** private one-to-one messaging with manual refresh and draft handling.
 - **Folio:** private folders, file uploads, downloads, and ownership checks.
-- Real screenshots of each project’s public page, technology lists, and concise notes about implementation decisions.
+- Real screenshots of the personal projects’ public pages, technology lists, and concise notes about implementation decisions. Client contributions use text-led entries.
 - Responsive layouts, semantic sections, skip navigation, visible keyboard focus, and reduced-motion support.
 
-These are personal learning projects, not commercial products. Their free-hosted APIs may need about a minute to wake after inactivity. Provider quotas can also affect availability. Follow each source link for setup instructions and limitations.
+The four full-stack projects are personal learning projects, separate from the commercial WordPress work. Their free-hosted APIs may need about a minute to wake after inactivity. Provider quotas can also affect availability. Follow each source link for setup instructions and limitations.
 
 ## Stack
 
@@ -50,7 +53,9 @@ To preview a release build, run `npm run build` followed by `npm run preview`.
 
 ```text
 src/App.jsx                 Page sections and navigation
-src/components/Project.jsx  Reusable project presentation
+src/components/Project.jsx  Personal project presentation
+src/components/ClientWork.jsx Commercial contributions and experience
+src/data/clientWork.js      Featured and additional client contributions
 src/data/projects.js        Project copy, technology lists, and links
 src/styles.css              Layout, typography, colors, responsive rules
 public/images/              Optimized screenshots of the actual projects
@@ -58,7 +63,7 @@ docs/                       Screenshot of the completed portfolio
 index.html                  Page title, description, and social metadata
 ```
 
-Edit `src/data/projects.js` to update a project. Replace its screenshot in `public/images/` and keep its alternative text and dimensions accurate. Update the introduction, about text, and contact profile in `src/App.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
+Edit `src/data/clientWork.js` to update client contributions or `src/data/projects.js` to update a personal project. Replace its screenshot in `public/images/` and keep its alternative text and dimensions accurate. Update the introduction, about text, and contact profile in `src/App.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
 
 The contact section includes my approved email address and verified GitHub profile. No résumé is published. The page uses the confirmed production URL for canonical and Open Graph URL metadata. No social image is configured.
 
