@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from 'react'
 const links = [
   ['work', 'Work'],
   ['services', 'Services'],
+  ['projects', 'Projects'],
   ['skills', 'Skills'],
   ['about', 'About'],
   ['credentials', 'Credentials'],
-  ['contact', 'Contact'],
+  ['contact', 'Let’s Talk'],
 ]
 
 export default function Header() {
@@ -48,12 +49,7 @@ export default function Header() {
         const atEnd =
           window.scrollY + window.innerHeight >=
           document.documentElement.scrollHeight - 4
-        const section =
-          current === 'projects'
-            ? 'work'
-            : current === 'experience'
-              ? 'about'
-              : current
+        const section = current === 'experience' ? 'about' : current
         setActive(atEnd ? 'contact' : section || '')
       })
     }
@@ -108,10 +104,12 @@ export default function Header() {
             <a
               key={id}
               href={`#${id}`}
+              className={id === 'contact' ? 'button nav-contact' : undefined}
               aria-current={active === id ? 'location' : undefined}
               onClick={() => navigate(id)}
             >
               {label}
+              {id === 'contact' && <span aria-hidden="true">↗</span>}
             </a>
           ))}
         </nav>
