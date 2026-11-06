@@ -1,4 +1,15 @@
 import { credentials } from '../data/credentials.js'
+const certificateImages = {
+  'CS302: Software Engineering': 'saylor-cs302',
+  'Responsive Web Design': 'fcc-responsive',
+  JavaScript: 'fcc-javascript',
+  'Front-End Development Libraries': 'fcc-libraries',
+  'Ahrefs’ Marketing Platform': 'ahrefs',
+  'SEO Certified': 'hubspot',
+  'SEO Toolkit Crash Course': 'semrush-toolkit',
+  'Technical SEO and AI Search Essentials with Semrush': 'semrush-technical',
+}
+
 export default function Credentials() {
   return (
     <section
@@ -23,9 +34,20 @@ export default function Credentials() {
       <ul className="credential-list">
         {credentials.map((credential) => (
           <li key={`${credential.issuer}-${credential.title}`}>
-            <div>
-              <h3>{credential.title}</h3>
-              {credential.validity && <span>{credential.validity}</span>}
+            <div className="credential-heading">
+              <div className="credential-thumbnail" aria-hidden="true">
+                <img
+                  src={`/images/certificates/${certificateImages[credential.title]}.webp`}
+                  alt=""
+                  width="128"
+                  height="90"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <h3>{credential.title}</h3>
+                {credential.validity && <span>{credential.validity}</span>}
+              </div>
             </div>
             <div className="credential-meta">
               <span>{credential.issuer}</span>

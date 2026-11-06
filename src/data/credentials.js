@@ -39,6 +39,14 @@ export const credentials = [
   },
 
   {
+    issuer: 'HubSpot Academy',
+    title: 'SEO Certified',
+    issued: '2026-03-06',
+    date: 'March 6, 2026',
+    validity: 'Valid through April 5, 2027',
+    url: 'https://app-na2.hubspot.com/academy/achievements/mwqcd44w/en/1/jan-christopher-buen/seo',
+  },
+  {
     issuer: 'Semrush Academy',
     title: 'SEO Toolkit Crash Course',
     url: 'https://static.semrush.com/academy/certificates/01cfb57b77/jan-christopher-buen_25.pdf',

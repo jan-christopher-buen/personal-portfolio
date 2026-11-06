@@ -722,6 +722,28 @@ main:focus {
   border-bottom: 1px solid var(--line);
   padding: 22px 0;
 }
+.credential-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.credential-thumbnail {
+  display: grid;
+  place-items: center;
+  flex: 0 0 128px;
+  width: 128px;
+  height: 90px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.credential-thumbnail img {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  object-fit: contain;
+}
 .credential-list h3 {
   font-size: 1rem;
   letter-spacing: -0.02em;
@@ -1081,6 +1103,11 @@ button,
     bottom: -38px;
   }
 
+  .credential-thumbnail {
+    flex-basis: 96px;
+    width: 96px;
+    height: 72px;
+  }
   .credential-list li {
     grid-template-columns: 1fr;
     gap: 10px;
