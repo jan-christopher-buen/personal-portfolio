@@ -601,6 +601,14 @@ main:focus {
   min-width: 0;
   max-width: 760px;
 }
+.about-content > .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 20px;
+  padding: 8px 0;
+}
 .hero-portrait {
   width: 100%;
   max-width: 380px;

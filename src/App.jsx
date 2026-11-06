@@ -33,6 +33,15 @@ function About() {
           document decisions, with a focus on useful interfaces and dependable
           websites.
         </p>
+        <a
+          className="text-link"
+          href="/Jan-Christopher-Buen-Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View résumé (PDF, opens in a new tab)"
+        >
+          View résumé <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   )
@@ -99,8 +108,14 @@ export default function App() {
               <a className="button" href="#work">
                 View My Work <span aria-hidden="true">↗</span>
               </a>
-              <a className="secondary-action" href="#contact">
-                Let’s Talk <span aria-hidden="true">↗</span>
+              <a
+                className="secondary-action"
+                href="/Jan-Christopher-Buen-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View résumé (PDF, opens in a new tab)"
+              >
+                View résumé <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
