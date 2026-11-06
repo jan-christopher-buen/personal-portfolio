@@ -21,6 +21,17 @@ const groups = [
     tools: ['WordPress', 'PHP', 'WooCommerce', 'ACF', 'Elementor'],
   },
   {
+    label: 'SEO & analytics',
+    tools: [
+      'Google Business Profile',
+      'Google Search Console',
+      'Google Analytics 4 (GA4)',
+      'Rank Math',
+      'Yoast SEO',
+      'Semrush',
+    ],
+  },
+  {
     label: 'Testing',
     tools: ['Jest', 'Vitest'],
   },

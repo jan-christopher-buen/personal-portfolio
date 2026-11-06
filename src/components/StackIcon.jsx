@@ -28,6 +28,12 @@ const brandIcons = {
   ACF: 'acf',
   Elementor: 'elementor',
   Hostinger: 'hostinger',
+  'Google Business Profile': 'googlebusinessprofile',
+  'Google Search Console': 'googlesearchconsole',
+  'Google Analytics 4 (GA4)': 'googleanalytics',
+  'Rank Math': 'rankmath',
+  'Yoast SEO': 'yoast',
+  Semrush: 'semrush',
 }
 
 const lightVariants = new Set([
@@ -44,7 +50,7 @@ export default function StackIcon({ name }) {
   return (
     <img
       className={`stack-tool-icon${lightVariants.has(name) ? ' stack-tool-icon-light' : ''}`}
-      src={`/icons/${brandIcons[name]}.svg`}
+      src={`/icons/${brandIcons[name]}.${['Google Business Profile', 'Rank Math'].includes(name) ? 'png' : 'svg'}`}
       width="24"
       height="24"
       alt=""

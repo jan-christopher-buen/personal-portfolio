@@ -1,6 +1,6 @@
 export const experience = [
   {
-    role: 'Web Developer & SEO Specialist',
+    role: 'Web Developer | Local SEO',
     company: 'Ironclad Sites & affiliated businesses',
     start: '2026-03',
     startLabel: 'March 2026',
