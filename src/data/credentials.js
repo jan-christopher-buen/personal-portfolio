@@ -1,6 +1,14 @@
 // Titles and dates transcribed from certificates supplied by Jan Christopher Buen.
 export const credentials = [
   {
+    issuer: 'Saylor University',
+    title: 'CS302: Software Engineering',
+    issued: '2026-11-05',
+    date: 'November 5, 2026',
+    credentialId: '0963055547JB',
+    url: 'https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1793935045/0963055547JB.pdf',
+  },
+  {
     issuer: 'freeCodeCamp',
     title: 'Responsive Web Design',
     issued: '2026-03-08',

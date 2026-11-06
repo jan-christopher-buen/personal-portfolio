@@ -16,7 +16,9 @@ export default function Credentials() {
             Always learning.
           </h2>
         </div>
-        <p>Certifications in web development and search.</p>
+        <p>
+          Certifications in software engineering, web development, and search.
+        </p>
       </div>
       <ul className="credential-list">
         {credentials.map((credential) => (
@@ -29,6 +31,9 @@ export default function Credentials() {
               <span>{credential.issuer}</span>
               {credential.issued && (
                 <time dateTime={credential.issued}>{credential.date}</time>
+              )}
+              {credential.credentialId && (
+                <span>Credential ID: {credential.credentialId}</span>
               )}
             </div>
             {credential.url && (

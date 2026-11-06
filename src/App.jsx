@@ -35,7 +35,7 @@ function About() {
         </p>
         <a
           className="text-link"
-          href="/Jan-Christopher-Buen-Resume.pdf"
+          href="/jan-christopher-buen-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View résumé (PDF, opens in a new tab)"
@@ -110,7 +110,7 @@ export default function App() {
               </a>
               <a
                 className="secondary-action"
-                href="/Jan-Christopher-Buen-Resume.pdf"
+                href="/jan-christopher-buen-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="View résumé (PDF, opens in a new tab)"
