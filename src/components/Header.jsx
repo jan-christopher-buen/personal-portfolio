@@ -82,7 +82,14 @@ export default function Header() {
           href="#top"
           aria-label="Jan Christopher Buen — back to top"
         >
-          jcb<span>.</span>
+          <img
+            src="/images/jcb-logo.svg"
+            width="88"
+            height="32"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>Jan Christopher Buen</span>
         </a>
         <button
           ref={toggle}

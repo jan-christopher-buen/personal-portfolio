@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;650;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 :root {
   font-family: 'DM Sans', Arial, sans-serif;
-  color: #f5f5f5;
-  background: #101010;
+  color: var(--text);
+  background: var(--background);
   color-scheme: dark;
   font-synthesis: none;
-  --background: #101010;
-  --surface: #1a1a1a;
-  --raised: #252525;
-  --text: #f5f5f5;
-  --muted: #b8b8b8;
-  --line: #383838;
-  --accent: #ff9b54;
-  --hover: #ffb47d;
+  --background: #0b0d12;
+  --surface: #151923;
+  --raised: #202736;
+  --text: #f5f7fa;
+  --muted: #a8b3c4;
+  --line: #364154;
+  --accent: #7aa2ff;
+  --hover: #a3beff;
+  --accent-halo: rgb(122 162 255 / 25%);
+  --accent-subtle: rgb(122 162 255 / 10%);
   --width: 1240px;
 }
 * {
@@ -110,7 +112,7 @@ main:focus {
   margin-right: 12px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgb(255 155 84 / 25%);
+  box-shadow: 0 0 0 4px var(--accent-halo);
   vertical-align: middle;
 }
 .section-label {
@@ -168,15 +170,25 @@ main:focus {
   margin: auto;
 }
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
   font-family: 'Space Grotesk', Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.09em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
   color: var(--text);
   text-decoration: none;
 }
+.wordmark img {
+  width: 88px;
+  height: 32px;
+  flex-shrink: 0;
+}
 .wordmark span {
-  color: var(--accent);
+  white-space: nowrap;
 }
 .navigation {
   display: flex;
@@ -231,7 +243,7 @@ main:focus {
   margin-left: 4px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgb(255 155 84 / 25%);
+  box-shadow: 0 0 0 4px var(--accent-halo);
   flex-shrink: 0;
 }
 .hero h1 span {
@@ -270,6 +282,8 @@ main:focus {
   transform: translateY(-2px);
 }
 .button:active {
+  background: var(--hover);
+  box-shadow: inset 0 0 0 2px var(--background);
   transform: translateY(0);
 }
 .secondary-action {
@@ -678,7 +692,7 @@ main:focus {
 .is-current .timeline-dot {
   border-color: var(--accent);
   background: var(--accent);
-  box-shadow: 0 0 0 4px rgb(255 155 84 / 10%);
+  box-shadow: 0 0 0 4px var(--accent-subtle);
 }
 .timeline-details {
   grid-column: 2;
@@ -930,7 +944,7 @@ button,
 }
 .timeline-entry:is(:hover, :focus-within) .timeline-dot {
   border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgb(255 155 84 / 10%);
+  box-shadow: 0 0 0 4px var(--accent-subtle);
 }
 .reveal-enter {
   animation: enter 0.65s cubic-bezier(0.16, 1, 0.3, 1) backwards;
@@ -1154,13 +1168,122 @@ button,
   padding: 12px 20px;
   min-height: 44px;
   background: var(--accent);
-  color: #101010;
+  color: var(--background);
 }
 .navigation .nav-contact:hover,
 .navigation .nav-contact[aria-current] {
   background: var(--hover);
-  color: #101010;
+  color: var(--background);
 }
 .navigation .nav-contact[aria-current]::after {
   display: none;
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .navigation {
+    gap: 16px;
+  }
+  .wordmark {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .wordmark img {
+    width: 66px;
+    height: 24px;
+  }
+}
+@media (min-width: 761px) and (max-width: 1000px) {
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text);
+    padding: 10px 14px;
+    min-height: 44px;
+    font-size: 0.8rem;
+  }
+  .menu-toggle:hover {
+    background: var(--raised);
+  }
+  .navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    padding: 12px 32px 22px;
+    border-bottom: 1px solid var(--line);
+    gap: 0;
+  }
+  .navigation.is-open {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .navigation a {
+    padding: 14px 12px;
+    min-height: 48px;
+  }
+  .navigation a[aria-current]::after {
+    left: 12px;
+    right: auto;
+    width: 24px;
+    bottom: 8px;
+  }
+}
+@media (max-width: 760px) {
+  .wordmark {
+    font-size: 0.9rem;
+    gap: 8px;
+  }
+  .wordmark img {
+    width: 66px;
+    height: 24px;
+  }
+}
+@media (max-width: 380px) {
+  .header-inner {
+    margin-left: 16px;
+    margin-right: 16px;
+    gap: 8px;
+  }
+  .wordmark {
+    font-size: 0.7rem;
+    gap: 6px;
+  }
+  .wordmark img {
+    width: 44px;
+    height: 16px;
+  }
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  cursor: not-allowed;
+  color: var(--muted);
+  background: var(--raised);
+  border: 1px dashed var(--muted);
+  transform: none;
+  box-shadow: none;
+}
+
+.footer-branding {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+.footer-branding a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.footer-branding img {
+  display: block;
+  width: 66px;
+  height: 24px;
 }

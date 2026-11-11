@@ -219,7 +219,18 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Jan Christopher Buen</p>
+          <div className="footer-branding">
+            <a href="#top" aria-label="Jan Christopher Buen — back to top">
+              <img
+                src="/images/jcb-logo.svg"
+                width="66"
+                height="24"
+                alt=""
+                aria-hidden="true"
+              />
+            </a>
+            <p>© {new Date().getFullYear()} Jan Christopher Buen</p>
+          </div>
           <a href={`${profileUrl}/personal-portfolio`}>
             Source code <span aria-hidden="true">↗</span>
           </a>
