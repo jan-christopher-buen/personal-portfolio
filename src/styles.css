@@ -624,22 +624,24 @@ main:focus {
   padding: 8px 0;
 }
 .hero-portrait {
+  position: relative;
   width: 100%;
   max-width: 380px;
   justify-self: center;
+  isolation: isolate;
   padding: 10px;
   border: 1px solid var(--line);
+  border-radius: 20px;
   background: var(--surface);
   box-shadow: 10px 10px 0 -9px var(--accent);
+  overflow: hidden;
 }
-.hero-portrait img {
+.hero-cutout {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 5 / 6;
   max-height: 600px;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
 }
 .experience-timeline {
   margin: 0;
@@ -922,7 +924,7 @@ button,
     clip-path: inset(0);
   }
 }
-.hero-portrait img {
+.hero-cutout {
   animation: portrait-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 100ms backwards;
 }
 .button > span[aria-hidden],

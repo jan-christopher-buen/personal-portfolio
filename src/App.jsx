@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Header from './components/Header.jsx'
+import HeroPortrait from './components/HeroPortrait.jsx'
 import Project from './components/Project.jsx'
 import ClientWork from './components/ClientWork.jsx'
 import Services from './components/Services.jsx'
@@ -92,7 +93,7 @@ export default function App() {
           <div className="hero-copy">
             <p className="eyebrow">
               <span className="identity-line" aria-hidden="true" />
-              Jan Christopher Buen / Web Developer
+              Open to projects &amp; work opportunities
             </p>
             <h1 id="intro-title">
               Useful websites.
@@ -119,16 +120,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="hero-portrait">
-            <img
-              src="/images/jan-christopher-buen.jpg"
-              alt="Jan Christopher Buen"
-              width="720"
-              height="1008"
-              fetchPriority="high"
-              decoding="async"
-            />
-          </div>
+          <HeroPortrait />
         </section>
         <ClientWork />
         <Services />
