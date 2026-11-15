@@ -6,7 +6,7 @@ I built this website for [The Odin Project’s personal website assignment](http
 
 ![The portfolio’s introduction and selected work on a desktop screen](docs/portfolio-desktop.webp)
 
-[Visit the live portfolio](https://janchristopherbuen.vercel.app/)
+[Visit the live portfolio](https://janchristopherbuen.com/)
 
 ## What you can explore
 
@@ -64,7 +64,7 @@ index.html                     Page title, description, and social metadata
 
 Edit the modules in `src/data/` to update client work, personal projects, credentials, or experience. Only add credential dates and verification URLs supported by the certificate or issuer. When replacing a personal-project screenshot in `public/images/`, keep its alternative text and dimensions accurate. Update the introduction and about text in `src/App.jsx`, and contact details in `src/components/Contact.jsx`. The GitHub profile URL is centralized in the data module. Color variables and responsive styles live in `src/styles.css`.
 
-The contact section includes my approved email address and verified GitHub profile. No résumé is published. The page uses the confirmed production URL for canonical and Open Graph URL metadata. No social image is configured.
+The contact section includes my approved email address and verified GitHub profile. The locally hosted [résumé PDF](https://janchristopherbuen.com/jan-christopher-buen-resume.pdf) is linked from the introduction and About section. The page uses the confirmed production URL for canonical and Open Graph URL metadata. No social image is configured.
 
 ## Assets and references
 
@@ -80,7 +80,7 @@ Design research included [Brittany Chiang](https://brittanychiang.com/) for clea
 
 ## Hosting
 
-Hosted on Vercel’s free Hobby plan at [janchristopherbuen.vercel.app](https://janchristopherbuen.vercel.app/).
+Hosted on Vercel’s free Hobby plan at [janchristopherbuen.com](https://janchristopherbuen.com/).
 
 The project uses the repository root, the Vite preset, Node.js **24.x**, install command **`npm ci`**, build command **`npm run build`**, and output directory **`dist`**. No environment variables or SPA routing rewrites are required. The production branch is `main`.
 
